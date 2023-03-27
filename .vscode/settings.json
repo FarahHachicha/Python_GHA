@@ -1,0 +1,5 @@
+{
+    "python.analysis.extraPaths": [
+        "./lgm_shapes_test"
+    ]
+}
