@@ -24,9 +24,7 @@ jobs:
           python-version: ${{ matrix.python-version }}
           cache: "poetry"
       - name: Install dependencies
-        run: | 
-          poetry install
-          pip install flake8 pytest
+        run: poetry install
       - name: Test with Pytest
         run: poetry run pytest
      - name: Linting project with flake8
