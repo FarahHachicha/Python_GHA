@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     strategy:
       matrix:
         python-version: ["3.9"]
@@ -23,7 +23,9 @@ jobs:
           python-version: ${{ matrix.python-version }}
           cache: "poetry"
       - name: Install dependencies
-        run: poetry install
+        run: |
+          poetry install
+          python -m pip install flake8 pytest
       - name: Test with Pytest
         run: poetry run pytest
       - name: Lint with flake8
